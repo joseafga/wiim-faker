@@ -1,0 +1,11 @@
+{
+    "name": "jose/wiim-fake",
+    "description": "Face Wiim API",
+    "authors": [
+        {
+            "name": "José Almeida",
+            "email": "jose.afga@gmail.com"
+        }
+    ],
+    "require": {}
+}

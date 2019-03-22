@@ -1,0 +1,26 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(js|ico|gif|jpg|png|css)$
+
+# processes
+RewriteRule ^processes\/$ wiim/api/v1/processes.php [END]
+# process
+RewriteRule ^processes\/([0-9]+)$ wiim/api/v1/process.php?id=$1 [END]
+# tags
+RewriteRule ^processes\/([0-9]+)\/tags$ wiim/api/v1/process_tags.php?id=$1 [END]
+# timeline
+RewriteRule ^processes\/([0-9]+)\/timeline$ wiim/api/v1/process_timeline.php?id=$1 [END]
+# tags id
+RewriteRule ^tags\/([0-9]+)$ wiim/api/v1/tag.php?id=$1 [END]
+# records
+RewriteRule ^tags\/([0-9]+)\/records$ wiim/api/v1/tag_records.php?id=$1 [END,QSA]
+# test
+RewriteRule ^(.*)$ wiim/api/v1/index.php?req=$1 [END]
