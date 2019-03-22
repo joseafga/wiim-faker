@@ -11,16 +11,16 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !\.(js|ico|gif|jpg|png|css)$
 
 # processes
-RewriteRule ^processes\/$ wiim/api/v1/processes.php [END]
+RewriteRule ^api\/v1\/processes\/$ v1/processes.php [END]
 # process
-RewriteRule ^processes\/([0-9]+)$ wiim/api/v1/process.php?id=$1 [END]
+RewriteRule ^api\/v1\/processes\/([0-9]+)$ v1/process.php?id=$1 [END]
 # tags
-RewriteRule ^processes\/([0-9]+)\/tags$ wiim/api/v1/process_tags.php?id=$1 [END]
+RewriteRule ^api\/v1\/processes\/([0-9]+)\/tags$ v1/process_tags.php?id=$1 [END]
 # timeline
-RewriteRule ^processes\/([0-9]+)\/timeline$ wiim/api/v1/process_timeline.php?id=$1 [END]
+RewriteRule ^api\/v1\/processes\/([0-9]+)\/timeline$ v1/process_timeline.php?id=$1 [END]
 # tags id
-RewriteRule ^tags\/([0-9]+)$ wiim/api/v1/tag.php?id=$1 [END]
+RewriteRule ^api\/v1\/tags\/([0-9]+)$ v1/tag.php?id=$1 [END]
 # records
-RewriteRule ^tags\/([0-9]+)\/records$ wiim/api/v1/tag_records.php?id=$1 [END,QSA]
+RewriteRule ^api\/v1\/tags\/([0-9]+)\/records$ v1/tag_records.php?id=$1 [END,QSA]
 # test
-RewriteRule ^(.*)$ wiim/api/v1/index.php?req=$1 [END]
+RewriteRule ^(.*)$ v1/index.php?req=$1 [END]
