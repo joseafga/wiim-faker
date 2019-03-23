@@ -1,2 +1,2 @@
-# Wiim-Fake
-Fake Wiim API
+# Wiim-Faker
+Fake Wiim API for testing purpose
