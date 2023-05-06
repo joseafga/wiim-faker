@@ -1,6 +1,6 @@
 {
     "name": "jose/wiim-fake",
-    "description": "Face Wiim API",
+    "description": "Fake Wiim API",
     "authors": [
         {
             "name": "José Almeida",
